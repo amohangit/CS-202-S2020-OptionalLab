@@ -1,0 +1,49 @@
+% Add the honor code statement here. 
+% Comments are added in Latex using the percentage sign. 
+
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{color}
+\usepackage{listings}
+
+\usepackage{algorithm2e}
+\usepackage{algorithmic}
+
+\title{exp-tracker}
+\author{amohan }
+\date{January 2020}
+
+\begin{document}
+\begin{itemize}
+\item[]
+\textbf{Algorithm - }Find Most Played Song ($S, n$)
+\item[]
+\textbf{Input - }A set of play counts associated with a variety of songs inside a playlist.
+\item[]
+\textbf{Output - }The most played song.
+\item[]
+\vspace{0.1in}
+ \scalebox{1}{
+\begin{algorithm}[H]
+\begin{algorithmic}[1]
+\STATE $temp \gets S[0]$
+\STATE $res \gets 1$
+\FOR{$i=1$ to $n$}
+\IF{$S[i] > temp$}
+\STATE $temp \gets S[i]$
+\STATE $res \gets i+1$
+
+\ENDIF
+\ENDFOR
+\STATE \textbf{return} res;
+\end{algorithmic}
+\label{alg:seq}
+\end{algorithm}
+}
+\end{itemize}
+\end{document}

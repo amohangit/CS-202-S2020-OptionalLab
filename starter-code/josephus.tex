@@ -1,6 +1,7 @@
 % Add the honor code statement here. 
 % Comments are added in Latex using the percentage sign. 
 
+
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{verbatim}
@@ -13,35 +14,34 @@
 \usepackage{algorithm2e}
 \usepackage{algorithmic}
 
-\title{exp-tracker1}
+\title{Josephus}
 \author{amohan }
 \date{January 2020}
 
 \begin{document}
 \begin{itemize}
 \item[]
-\textbf{Algorithm:} ExpenseTracker(E)
+\textbf{Algorithm - }Josephus($Q$)
 \item[]
-\textbf{Input:} An n-element array E of expenses each day.
+\textbf{Input:} an n-element queue Q of values such that Q[i] is the value connected to a person at position i in the circle.
 \item[]
-\textbf{Output:} An n-element array A of values such that 
-A[i] is the average of elements E[0], E[1], ... , E[i]
+\textbf{Output:} the value connected to a person who is the last one remaining in the circle.
+
+
 \item[]
 \scalebox{1}{
 \begin{algorithm}[H]
 \begin{algorithmic}[1]
-\STATE Initialize $a, i, j = 0$
-\FOR{$(i=0; i<n; i=i+1)$}
-\STATE $a \gets 0$
-\FOR{$(j=0; j<i; i=i+1)$}
-\STATE $a \gets a + E[j]$
-\ENDFOR
-\STATE $A[i] \gets a/i+1$
-\ENDFOR
-\STATE \textbf{return A}
+\WHILE{Q.size() $>$ 1)}
+\STATE Q.enqueue(Q.dequeue)
+\STATE Q.dequeue()
+\ENDWHILE
+\STATE \textbf{return} Q.front()
 \end{algorithmic}
 \label{alg:seq}
 \end{algorithm}
 }
+
+
 \end{itemize}
 \end{document}

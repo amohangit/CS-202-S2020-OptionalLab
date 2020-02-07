@@ -21,27 +21,28 @@
 \begin{document}
 \begin{itemize}
 \item[]
-\textbf{Algorithm - }Josephus($Q$)
+\footnotesize{\textbf{Algorithm - }Insertion($A$)}\\
 \item[]
-\textbf{Input:} an n-element queue Q of values such that Q[i] is the value connected to a person at position i in the circle.
+\footnotesize{\textbf{Input:} an n-element un-sorted array A of integer values.}
 \item[]
-\textbf{Output:} the value connected to a person who is the last one remaining in the circle.
+\footnotesize{\textbf{Output:} an n-element sorted array A of integer values.} 
 
-
 \item[]
-\scalebox{1}{
+\scalebox{0.9}{
 \begin{algorithm}[H]
 \begin{algorithmic}[1]
-\WHILE{Q.size() $>$ 1)}
-\STATE Q.enqueue(Q.dequeue)
-\STATE Q.dequeue()
+\FOR{$i=1$ to $n$}
+\STATE $key \gets A[i]$
+\STATE $j \gets i-1$
+\WHILE{$j >= 0$ and $A[j] > key$)}
+\STATE $A[j+1] \gets A[j]$
+\STATE $j \gets j-1$
 \ENDWHILE
-\STATE \textbf{return} Q.front()
+\STATE $A[j+1] \gets key$
+\ENDFOR
 \end{algorithmic}
 \label{alg:seq}
 \end{algorithm}
 }
-
-
 \end{itemize}
 \end{document}

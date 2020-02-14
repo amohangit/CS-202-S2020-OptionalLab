@@ -49,14 +49,16 @@ public class CountingSort {
         int[] patient_ids = new int[patients]; 
         int[] patients_populated = prepareData(patient_ids);
 
+        /* The line below will print the output. 
+        Do not uncomment this lines.  */
+        System.out.println("Unsorted:\t" + Arrays.toString(patients_populated));   
         
         /* Implement the sortArray method, so as to 
         get the correct results.*/
         int[] sorted_array = sortArray(patients_populated);
         
-        /* The two lines below will print the output. 
-        Do not uncomment these lines.  */
-        System.out.println("Unsorted:\t" + Arrays.toString(patients_populated));   
+        /* The line below will print the output. 
+        Do not uncomment this lines.  */
         System.out.println("Sorted:\t" + Arrays.toString(sorted_array));   
         
     }   
